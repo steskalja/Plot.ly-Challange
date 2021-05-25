@@ -50,7 +50,7 @@ function BuildDash(row){
         },
         text: row[0].otu_labels.slice(0,10)    
     }];
-    Plotly.newPlot('bar', dBar);
+    Plotly.newPlot('bar', dBar, barLayout);
     Plotly.newPlot('bubble', dBubble);
 }
 d3.json('samples.json').then( d => {
