@@ -27,6 +27,18 @@ function BuildDash(row){
         text: row[0].otu_labels.slice(0,10),
         orientation: 'h'
       }];
+    let barLayout = {
+        showlegend: false,
+        xaxis: {
+            tickangle: -45
+        },
+        yaxis: {
+            zeroline: false,
+            gridwidth: 2
+        },
+        bargap :0.001
+    }
+
     let dBubble =[{
         x: row[0].otu_ids.slice(0,10),
         y: row[0].sample_values.slice(0,10),
