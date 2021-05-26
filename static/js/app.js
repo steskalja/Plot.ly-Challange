@@ -20,10 +20,12 @@ function BuildDemo(row){
 function BuildDash(row){
     //const dBar = d3.selectAll('#bar');
     //const dBubble = d3.selectAll('#bubble');
+    let ySlice = row[0].otu_ids.slice(0,10).map((d,i) => `OTU: ${d}`);
+    console.log(ySlice.length);
     let dBar = [{
         type: 'bar',
         x: row[0].sample_values.slice(0,10),
-        y: row[0].otu_ids.slice(0,10),
+        y: ySlice,
         text: row[0].otu_labels.slice(0,10),
         orientation: 'h'
       }];
@@ -36,7 +38,9 @@ function BuildDash(row){
             zeroline: false,
             gridwidth: 2
         },
-        bargap :0.001
+        height: 500,
+        width: 800,
+        bargap :0.5  
     }
 
     let dBubble =[{
